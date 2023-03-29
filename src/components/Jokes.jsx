@@ -6,19 +6,18 @@ function JokeComponent() {
   const [isLoading, setIsLoading] = useState(false);
 
   const getJoke = async () => {
-    setIsLoading(true); // set loading to true before making the API call
+    setIsLoading(true);
     try {
-      const response = await fetch('http://127.0.0.1:3000/jokes');
+      const response = await fetch('http://localhost:3000/jokes/random');
       const data = await response.json();
       console.log(data);
-      //const jokesWithAuthors = data.filter((joke) => joke.author);
-      const randomJoke = data[Math.floor(Math.random() * data.length)];
-      setJokeData(randomJoke);
+      setJokeData(data);
     } catch (error) {
       console.log(error);
     }
-    setIsLoading(false); // set loading back to false after the API call is complete
+    setIsLoading(false);
   }
+  
 
   return (
     <div className="joke-container">
