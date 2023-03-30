@@ -1,9 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Nav } from 'react-bootstrap';
+import './Navbar.css';
 
 function MyNavbar() {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar className="my-navbar" bg="light" expand="lg">
       <Navbar.Brand href="">Jokes App</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">

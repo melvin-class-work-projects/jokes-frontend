@@ -1,6 +1,8 @@
 //import React from 'react';
 import Jokes from './components/Jokes';
 import React, { useState } from 'react';
+import Signup from './components/Signup';
+import Login from './components/Login';
 //import Navbar from './components/Navbar';
 import Home from './components/Home';
 //import JokeComponent from './components/Jokes';
@@ -32,7 +34,7 @@ function App() {
   return (
     <>
       <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home">Jokes App</Navbar.Brand>
+        <Navbar.Brand href="">Jokes App</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
@@ -44,6 +46,12 @@ function App() {
             </Nav.Link>
             <Nav.Link active={activeSection === 'jokes'} onClick={() => handleNavClick('jokes')}>
               Jokes
+              </Nav.Link>
+              <Nav.Link active={activeSection === 'signup'} onClick={() => handleNavClick('signup')}>
+          Signup
+          </Nav.Link>
+            <Nav.Link active={activeSection === 'login'} onClick={() => handleNavClick('login')}>
+           Login
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
@@ -52,6 +60,8 @@ function App() {
       {activeSection === 'home' && <Home />}
       {activeSection === 'about' && <About />}
       {activeSection === 'jokes' && <Jokes />}
+      {activeSection === 'signup' && <Signup />}
+      {activeSection === 'login' && <Login />}
     </>
     //<div className="App">
       //<Jokes />
